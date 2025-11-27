@@ -1,5 +1,9 @@
 import Papa from 'papaparse';
 
+// jsDelivr CDN base URL for CSV files hosted on GitHub
+// This allows us to serve large CSV files without including them in the deployment
+const CDN_BASE_URL = 'https://cdn.jsdelivr.net/gh/amalkantony/estative-owners-list@main/public/data';
+
 export interface CSVRecord {
   name?: string;
   phone?: string;
@@ -35,11 +39,12 @@ export async function getAvailableLocations(): Promise<LocationFile[]> {
 }
 
 /**
- * Load and parse a CSV file
+ * Load and parse a CSV file from jsDelivr CDN
  */
 export async function loadCSVFile(fileName: string): Promise<CSVData> {
   try {
-    const response = await fetch(`/data/${fileName}`);
+    // Fetch from jsDelivr CDN instead of local files
+    const response = await fetch(`${CDN_BASE_URL}/${fileName}`);
     const text = await response.text();
 
     return new Promise((resolve, reject) => {
