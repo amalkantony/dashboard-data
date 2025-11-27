@@ -25,7 +25,7 @@ export interface LocationFile {
  */
 export async function getAvailableLocations(): Promise<LocationFile[]> {
   try {
-    const response = await fetch('/api/locations');
+    const response = await fetch('/locations.json');
     const data = await response.json();
     return data.locations;
   } catch (error) {
