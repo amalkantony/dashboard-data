@@ -50,7 +50,9 @@ export function DataVisualizations({ data }: DataVisualizationsProps) {
           <CardTitle>Total Records</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-4xl font-bold">{stats.total.toLocaleString()}</div>
+          <div className="text-4xl font-bold">
+            {stats.total.toLocaleString()}
+          </div>
           <p className="text-sm text-muted-foreground mt-2">
             Total number of records in selected dataset
           </p>
@@ -126,8 +128,8 @@ export function DataVisualizations({ data }: DataVisualizationsProps) {
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                label={({ name, percent }) =>
-                  `${name.slice(0, 15)}... ${(percent * 100).toFixed(0)}%`
+                label={({ name, percent }: { name?: string; percent?: number }) =>
+                  `${(name ?? "").slice(0, 15)}... ${((percent ?? 0) * 100).toFixed(0)}%`
                 }
                 outerRadius={80}
                 fill="#8884d8"
