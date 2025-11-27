@@ -2,7 +2,7 @@ import Papa from 'papaparse';
 
 // jsDelivr CDN base URL for CSV files hosted on GitHub
 // This allows us to serve large CSV files without including them in the deployment
-const CDN_BASE_URL = 'https://cdn.jsdelivr.net/gh/amalkantony/estative-owners-list@main/public/data';
+const CDN_BASE_URL = 'https://cdn.jsdelivr.net/gh/amalkantony/dashboard-data@main/public/data';
 
 export interface CSVRecord {
   name?: string;

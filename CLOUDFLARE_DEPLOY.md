@@ -31,7 +31,7 @@ Your dashboard uses a smart architecture that keeps deployment size minimal:
    ```
 
 2. **Verify CSV files are on GitHub**
-   - Visit: `https://github.com/amalkantony/estative-owners-list/tree/main/public/data`
+   - Visit: `https://github.com/amalkantony/dashboard-data/tree/main/public/data`
    - Confirm all 248 CSV files are present
    - This is critical - jsDelivr serves files directly from your GitHub repo
 
@@ -39,7 +39,7 @@ Your dashboard uses a smart architecture that keeps deployment size minimal:
    - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
    - Navigate to **Pages** → **Create a project**
    - Click **Connect to Git**
-   - Select repository: `amalkantony/estative-owners-list`
+   - Select repository: `amalkantony/dashboard-data`
 
 4. **Configure Build Settings**
    - **Framework preset**: Next.js (Static HTML Export)
@@ -91,7 +91,7 @@ When you run `npm run build`, the following happens:
 - **CSV files stay in GitHub**: All 359MB of data remains in `public/data/`
 - **Build excludes them**: Automatically removed from deployment package
 - **Runtime fetching**: App fetches CSV files from jsDelivr CDN on-demand
-- **CDN URL pattern**: `https://cdn.jsdelivr.net/gh/amalkantony/estative-owners-list@main/public/data/filename.csv`
+- **CDN URL pattern**: `https://cdn.jsdelivr.net/gh/amalkantony/dashboard-data@main/public/data/filename.csv`
 
 ## Local Testing
 
@@ -192,10 +192,10 @@ Cloudflare Pages free tier includes:
    Failed to fetch https://cdn.jsdelivr.net/gh/...
    ```
 2. **Verify files are on GitHub**
-   - Visit: `https://github.com/amalkantony/estative-owners-list/tree/main/public/data`
+   - Visit: `https://github.com/amalkantony/dashboard-data/tree/main/public/data`
    - Confirm all CSV files are present
 3. **Test jsDelivr URL directly**
-   - Open: `https://cdn.jsdelivr.net/gh/amalkantony/estative-owners-list@main/public/data/abu_dhabi_data.csv`
+   - Open: `https://cdn.jsdelivr.net/gh/amalkantony/dashboard-data@main/public/data/abu_dhabi_data.csv`
    - Should download the CSV file
 4. **Wait for CDN cache**
    - After pushing new files, wait 5-10 minutes
@@ -231,7 +231,7 @@ git push
 
 # 2. Go to dash.cloudflare.com
 # 3. Pages → Create project → Connect Git
-# 4. Select repo: amalkantony/estative-owners-list
+# 4. Select repo: amalkantony/dashboard-data
 # 5. Build command: npm run build
 # 6. Output directory: out
 # 7. Deploy!
